@@ -61,11 +61,11 @@ Endpoint: /api
 
 HTTP Method: POST
 
-Request Body: JSON object with a "name" field.
+Request Body: JSON object with a "user_id" field.
 
 Example Request:
 
-curl -X POST -H "Content-Type: application/json" -d '{"name":"John Doe"}' http://localhost:5000/api
+curl -X POST -H "Content-Type: application/json" -d '{"user_id":"John Doe"}' http://localhost:5000/api
 
 Example Response
 
@@ -73,29 +73,29 @@ Example Response
 
 Fetch Details of a Person
 
-Endpoint: /api/<name>
+Endpoint: /api/<user_id>
 
 HTTP Method: GET
 
 Example Request:
 
-curl http://localhost:5000/people/John%20Doe
+curl http://localhost:5000/api/John%20Doe
 
 Example Response
 
-{"name": "John Doe"}
+{"user_id": "John Doe"}
 
 Modify Details of an Existing Person
 
-Endpoint: /api/<name>
+Endpoint: /api/<user_id>
 
 HTTP Method: PUT
 
-Request Body: JSON object with a "name" field containing the updated name.
+Request Body: JSON object with a "user_id" field containing the updated user_id.
 
 Example Request:
 
-curl -X PUT -H "Content-Type: application/json" -d '{"name":"Jane Smith"}' http://localhost:5000/api/John%20Doe
+curl -X PUT -H "Content-Type: application/json" -d '{"user_id":"Jane Smith"}' http://localhost:5000/api/John%20Doe
 
 Example Response
 
@@ -103,13 +103,13 @@ Example Response
 
 Remove a Person
 
-Endpoint: /api/<name>
+Endpoint: /api/<user_id>
 
 HTTP Method: DELETE
 
 Example Request:
 
-curl -X DELETE http://localhost:5000/people/Jane%20Smith
+curl -X DELETE http://localhost:5000/api/Jane%20Smith
 
 Example Response
 
